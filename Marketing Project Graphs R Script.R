@@ -15,6 +15,7 @@ library(sysfonts)
 
 font_add_google("Montserrat", "montserrat")
 font_add_google("Helvetica", "helvetica")
+font_add_google("Roboto", "roboto")
 
 showtext_auto()
 
@@ -23,7 +24,7 @@ showtext_auto()
 ggplot(product_prices) +
   geom_point(
     aes(x = Price, y = Category, color = Category),
-    size = 4,
+    size = 6,
     alpha = 0.8
   ) +
   scale_x_continuous(
@@ -32,20 +33,20 @@ ggplot(product_prices) +
     expand = expansion(mult = c(0, 0.08))
   ) +
   labs(
-    title = "Polaroid Product Prices by Category",
+    #title = "Polaroid Product Prices by Category",
     x = "Price (USD)",
     y = NULL
   ) +
-  theme_minimal(base_family = "montserrat") +
+  theme_minimal(base_family = "roboto") +
   theme(
     plot.title = element_text(
-      size = 20,
+      size = 35,
       face = "bold",
-      hjust = 0.40
+      hjust = 0.5
     ),
-    axis.title.x = element_text(size = 15, hjust = 0.43),
-    axis.text.y = element_text(size = 14),
-    axis.text.x = element_text(size = 15),
+    axis.title.x = element_text(size = 25, hjust = 0.45, face = "bold", margin = margin(t = 8)),
+    axis.text.y = element_text(size = 25, face = "bold", color = "black"),
+    axis.text.x = element_text(size = 23),
     legend.position = "none",
     panel.grid.minor = element_blank(),
     panel.grid.major.y = element_blank()
